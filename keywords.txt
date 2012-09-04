@@ -1,0 +1,18 @@
+#######################################
+# Syntax Coloring Map For WatchPin
+####################################### 
+# Datatypes (KEYWORD1)
+#######################################
+
+WatchPin	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+portState	KEYWORD2
+portDirection  	KEYWORD2
+pinState   	KEYWORD2
+pinDirection 	KEYWORD2
+pinIsPWM  	KEYWORD2
+pinPWM  	KEYWORD2
