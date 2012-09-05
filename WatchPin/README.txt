@@ -71,7 +71,7 @@ example: nameYouWantOfIstance.portState(PORT_B);
 *****************
 *portDirection()*
 *****************
-return bits sequence(byte) of each pin status of port requested.
+return bits sequence(byte) of each pin direction of port requested.
 (if a bit of byte is 0 the relative pin is INPUT, if 1 the relative pin is OUTPUT)
 write in parentheses "PORT_A for PORTA","PORT_B for PORTB" and so on.
 example: nameYouWantOfIstance.portDirection(PORT_B);
