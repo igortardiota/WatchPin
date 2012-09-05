@@ -66,7 +66,7 @@ for example: nameYouWantOfIstance.pinPWM(3);
 return bits sequence(byte) of each pin status of port requested.
 (if a bit of byte is 0 the relative pin is LOW, if 1 the relative pin is HIGH)
 write in parentheses "PORT_A for PORTA","PORT_B for PORTB" and so on.
-example: nameYouWantOfIstance.portState(B);
+example: nameYouWantOfIstance.portState(PORT_B);
 
 *****************
 *portDirection()*
@@ -74,7 +74,7 @@ example: nameYouWantOfIstance.portState(B);
 return bits sequence(byte) of each pin status of port requested.
 (if a bit of byte is 0 the relative pin is INPUT, if 1 the relative pin is OUTPUT)
 write in parentheses "PORT_A for PORTA","PORT_B for PORTB" and so on.
-example: nameYouWantOfIstance.portDirection(B);
+example: nameYouWantOfIstance.portDirection(PORT_B);
 
 
 -----Supported microcontrollers------
