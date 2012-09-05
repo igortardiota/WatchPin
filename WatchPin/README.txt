@@ -84,7 +84,7 @@ example: nameYouWantOfIstance.portDirection(B);
 - Atmega8
 - Atmega88/168/328
 - Atmega640/1280/1281/2560/2561
-- Atmega32U4 (only at 16 MHz)
+- Atmega32U4
 
 -----License-----
 
