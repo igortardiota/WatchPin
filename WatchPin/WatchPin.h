@@ -39,6 +39,10 @@
 #define PORT_K 11
 #define PORT_L 12
 
+#if defined (__AVR_ATmega32U4__)
+#define NUM_DIGITAL_PINS 20
+#endif
+
 class WatchPin
 {
 	public:
