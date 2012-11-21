@@ -16,3 +16,5 @@ pinState   	KEYWORD2
 pinDirection 	KEYWORD2
 pinIsPWM  	KEYWORD2
 pinPWM  	KEYWORD2
+pinIsAnalogic  	KEYWORD2
+listPorts  	KEYWORD2
