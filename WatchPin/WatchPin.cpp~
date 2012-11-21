@@ -5,49 +5,6 @@
 //include WatchPin header
 #include "WatchPin.h"
 
-char* PROGMEM stringPorts[] = {
-#if defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
-  "PORT_A\nPORT_B\nPORT_C\nPORT_D\nPORT_E\nPORT_F\nPORT_G\nPORT_H\nPORT_J\nPORT_K\nPORT_L\n",
-#elif defined(__AVR_ATmega32U4__)
-  "PORT_B\nPORT_C\nPORT_D\nPORT_E\nPORT_F\n",
-#elif defined(__AVR_ATmega1284P__) || defined(__AVR_ATmega644P__)
-  "PORT_A\nPORT_B\nPORT_C\nPORT_D\n",
-#else
-  "PORT_B\nPORT_C\nPORT_D\n",
-#endif
-};
-
-uint8_t PROGMEM uPorts[] = {
-#if defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
-  PORT_A,
-  PORT_B,
-  PORT_C,
-  PORT_D,
-  PORT_E,
-  PORT_F,
-  PORT_G,
-  PORT_H,
-  PORT_J,
-  PORT_K,
-  PORT_L,
-#elif defined(__AVR_ATmega32U4__)
-  PORT_B,
-  PORT_C,
-  PORT_D,
-  PORT_E,
-  PORT_F,
-#elif defined(__AVR_ATmega1284P__) || defined(__AVR_ATmega644P__)
-  PORT_A,
-  PORT_B,
-  PORT_C,
-  PORT_D,
-#else
-  PORT_B,
-  PORT_C,
-  PORT_D,
-#endif
-};
-
 uint8_t WatchPin::portState(uint8_t _port){
 	return *portInputRegister(_port);			//return state of port requested
 }
@@ -76,7 +33,7 @@ uint8_t WatchPin::pinPWM(uint8_t _pin){				//if  pin is pwm return its value, if
   switch(digitalPinToTimer(_pin))
   {
     #if defined(TCCR0) && defined(COM00) && !defined(__AVR_ATmega8__)
-	  case TIMER0A:
+      case TIMER0A:
       return OCR0;
       break;
     #endif
@@ -184,44 +141,8 @@ uint8_t WatchPin::pinPWM(uint8_t _pin){				//if  pin is pwm return its value, if
     #endif
 
     case NOT_ON_TIMER:
-    default:
-    return NOT_ON_TIMER;
-    break;
+     default:
+     return NOT_ON_TIMER;
+     break;
   }
 }
-
-boolean WatchPin::pinIsAnalogic(uint8_t _pin){
-  uint8_t bit = digitalPinToBitMask(_pin);			//bitmask of pin requested
-  uint8_t port = digitalPinToPort(_pin);			//port of pin requested
-
-//if pin requested is I/O return false else return if analogic pin requested is working as analog or digital
-#if defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
-  if (_pin < 54){
-    return false;
-  }else{
-    return ((*portModeRegister(port) & bit)==0) ? true:false;
-  }
-#elif defined(__AVR_ATmega32U4__)
-  if (_pin < 18){
-    return false;
-  }else{
-    return ((*portModeRegister(port) & bit)==0) ? true:false;
-  }
-#elif defined(__AVR_ATmega1284P__) || defined(__AVR_ATmega644P__)
-  if (_pin < 24){
-    return false;
-  }else{
-    return ((*portModeRegister(port) & bit)==0) ? true:false;
-  }
-#else
-  if (_pin < 14){
-    return false;
-  }else{
-    return ((*portModeRegister(port) & bit)==0) ? true:false;
-  }
-#endif
-}
-
-char* WatchPin::listPorts(){  //return array that contains a string with all ports of uController
-  return *stringPorts;
-}  

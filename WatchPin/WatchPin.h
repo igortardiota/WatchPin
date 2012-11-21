@@ -1,19 +1,18 @@
 /*
-	WatchPin is a library that shows to the user, information
-	about pins and ports of the microcontroller.
-	
-	This library support microcontrollers of Arduino and someone
-	of Atmel. For more info about supported microcontroller please
-	check the README.txt file.
-	
-	Written by Igor Tardiota on 09/2012. (igor_tardiota@alice.it)
-	
-	
-	This library is free software; you can redistribute it and/or
-	modify it under the terms of the Creative Commons SA-NC-BY License.
-	This library is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  WatchPin is a library that shows to the user, information
+  about pins and ports of the microcontroller.
+
+  This library support microcontrollers of Arduino and someone
+  of Atmel. For more info about supported microcontroller please
+  check the README.txt file.
+  
+  Written by Igor Tardiota on 09/2012. (igor_tardiota@alice.it)
+
+  This library is free software; you can redistribute it and/or
+  modify it under the terms of the Creative Commons SA-NC-BY License.
+  This library is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 */
 
 #ifndef WatchPin_h
@@ -41,13 +40,15 @@
 
 class WatchPin
 {
-	public:
-		//public methods
-		byte portState(uint8_t _port);
-		byte portDirection(uint8_t _port);
-		boolean pinState(uint8_t _pin);
-		boolean pinDirection(uint8_t _pin);
-		boolean pinIsPWM(uint8_t _pin);
-		uint8_t pinPWM(uint8_t _pin);
+  public:
+    //public methods
+    byte portState(uint8_t _port);
+    byte portDirection(uint8_t _port);
+    boolean pinState(uint8_t _pin);
+    boolean pinDirection(uint8_t _pin);
+    boolean pinIsPWM(uint8_t _pin);
+    uint8_t pinPWM(uint8_t _pin);
+	boolean pinIsAnalogic(uint8_t _pin);
+	char* listPorts();
 };
 #endif

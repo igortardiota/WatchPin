@@ -31,65 +31,51 @@ pinIsPWM(pin);
 pinPWM(pin);
 portState(port);
 portDirection(port);
-pinIsAnalogic(pin);
-listPorts();
 
-***************
-*pinState(pin)*
-***************
+************
+*pinState()*
+************
 returns LOW or HIGH (0 or 1);
 write in parentheses the number of pin
 for example: nameYouWantOfIstance.pinState(4);
 
-*******************
-*pinDirection(pin)*
-*******************
+****************
+*pinDirection()*
+****************
 returns INPUT or OUTPUT (0 or 1);
 write in parentheses the number of pin
 for example: nameYouWantOfIstance.pinDirection(4);
 
-***************
-*pinIsPWM(pin)*
-***************
+************
+*pinIsPWM()*
+************
 returns false or true (0 or 1);
 write in parentheses the number of pin
 for example: nameYouWantOfIstance.pinIsPWM(4);
 
-*************
-*pinPWM(pin)*
-*************
-returns pwm's value of pin or 0 if pin isn't pwm.
+**********
+*pinPWM()*
+**********
+return pwm's value of pin or 0 if pin isn't pwm.
 write in parentheses the number of pin
 for example: nameYouWantOfIstance.pinPWM(3);
 
-*****************
-*portState(port)*
-*****************
-returns bits sequence(byte) of each pin status of port requested.
+*************
+*portState()*
+*************
+return bits sequence(byte) of each pin status of port requested.
 (if a bit of byte is 0 the relative pin is LOW, if 1 the relative pin is HIGH)
 write in parentheses "PORT_A for PORTA","PORT_B for PORTB" and so on.
 example: nameYouWantOfIstance.portState(PORT_B);
 
-*********************
-*portDirection(port)*
-*********************
-returns bits sequence(byte) of each pin direction of port requested.
+*****************
+*portDirection()*
+*****************
+return bits sequence(byte) of each pin direction of port requested.
 (if a bit of byte is 0 the relative pin is INPUT, if 1 the relative pin is OUTPUT)
 write in parentheses "PORT_A for PORTA","PORT_B for PORTB" and so on.
 example: nameYouWantOfIstance.portDirection(PORT_B);
 
-********************
-*pinIsAnalogic(pin)*
-********************
-returns false or true (0 or 1);
-write in parentheses the number of pin that you requst to see if it work as analogic or digital
-for example: nameYouWantOfIstance.pinIsAnalogic(A0);
-
-*************
-*listPorts()*
-*************
-returns a string that contains all ports of microcontroller that you are using
-example: Serial.print(nameYouWantOfIstance.listPorts());
 
 -----Supported microcontrollers------
 - Atmega644/1284
